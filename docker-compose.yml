@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    platform: linux/amd64
+    volumes:
+      - mysql-data-volume:/var/lib/mysql
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - TZ=Asia/Tokyo
+    ports:
+      - 3306:3306
+  mysqldef:
+    build:
+      dockerfile: ./docker/Dockerfile_mysqldef
+    tty: true
+    volumes:
+      - .:/mysqldef
+volumes:
+  mysql-data-volume:
