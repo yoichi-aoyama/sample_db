@@ -6,7 +6,7 @@ services:
     volumes:
       - mysql-data-volume:/var/lib/mysql
     environment:
-      - ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - TZ=Asia/Tokyo
     ports:
       - 3306:3306
